@@ -20,19 +20,21 @@ public class DatabaseConfigRequest {
     @NotNull
     @NotBlank
     private String host;
-    private int port;
+    @NotNull
+    private Integer port;
     @NotNull
     @NotBlank
     private String username;
     private String password;
     @NotNull
     @NotBlank
-    private String database;
+    private String databaseName;
     @NotNull
-    @NotBlank
     @DatabaseEnumValidator(value = {DatabaseType.MYSQL,DatabaseType.MSSQL, DatabaseType.H2,DatabaseType.ORACLE,DatabaseType.POSTGRESQL,DatabaseType.SQLITE })
-    private String type;
+    private String databaseType;
     @NotNull
     @NotBlank
-    private String schema;
+    private String schemaName;
+    private boolean useTls=false;
+
 }

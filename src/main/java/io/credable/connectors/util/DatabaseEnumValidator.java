@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Documented
 public @interface DatabaseEnumValidator {
     String message() default "Must be one of {value}";
-    DatabaseType[] value();
+    DatabaseType[]   value();
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 

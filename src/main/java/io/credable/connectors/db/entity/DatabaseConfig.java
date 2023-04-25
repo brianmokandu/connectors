@@ -23,9 +23,11 @@ public class DatabaseConfig {
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
     private UUID id;
     private String host;
-    private int port;
+    private Integer port;
     private String username;
     private String password;
-    private String database;
-    private String type;
+    private String databaseName;
+    private String databaseType;
+    private String schemaName;
+    private boolean useTls;
 }
