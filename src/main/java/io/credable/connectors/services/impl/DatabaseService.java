@@ -10,10 +10,9 @@ public class DatabaseService {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-    public boolean testConnection(String schemaName) {
+    public boolean testConnection() {
         try {
-            var t =jdbcTemplate.queryForObject("SELECT * FROM %s LIMIT 1".formatted(schemaName), Object.class);
-            System.out.println(t);
+            jdbcTemplate.queryForObject("SELECT 1", Integer.class);
             return true;
         } catch (Exception e) {
             return false;

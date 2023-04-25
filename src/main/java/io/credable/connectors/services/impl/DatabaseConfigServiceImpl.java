@@ -58,13 +58,13 @@ public class DatabaseConfigServiceImpl implements DatabaseConfigService {
     public GenericResponse testDatabaseConfig(UUID id) {
         var databaseConfig = databaseConfigRepo.findById(id).orElseThrow(()->new CustomException(HttpStatus.BAD_REQUEST,"Config not found."));
         String url = "jdbc:%s://%s:%d/%s".formatted(databaseConfig.getDatabaseType(),databaseConfig.getHost(),databaseConfig.getPort(),databaseConfig.getDatabaseName());
-        System.out.println(url);
+        log.info("Url: " + url);
         String username = databaseConfig.getUsername();
         String password = databaseConfig.getPassword();
         DataSource dataSource = DataSourceFactory.createDataSource(url, username, password);
         DatabaseService databaseService = new DatabaseService(dataSource);
         String result = "Connection successful";
-        if (!databaseService.testConnection(databaseConfig.getSchemaName())) {
+        if (!databaseService.testConnection()) {
             result = "Connection failed";
         }
         return GenericResponse.builder().data(result).message(result).build();
