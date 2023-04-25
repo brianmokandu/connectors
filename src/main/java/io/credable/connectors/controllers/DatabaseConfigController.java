@@ -2,7 +2,6 @@ package io.credable.connectors.controllers;
 
 import io.credable.connectors.dto.DatabaseConfigRequest;
 import io.credable.connectors.dto.GenericResponse;
-import io.credable.connectors.dto.SftpConfigRequest;
 import io.credable.connectors.services.DatabaseConfigService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
