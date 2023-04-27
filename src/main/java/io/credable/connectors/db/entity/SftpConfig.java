@@ -30,8 +30,7 @@ public class SftpConfig {
     private String passphrase;// will also be used as password for username:password
     private int port;
     private  boolean active=true;
-    @Column(nullable = false)
-    private String clientId;
+
 
 
 }

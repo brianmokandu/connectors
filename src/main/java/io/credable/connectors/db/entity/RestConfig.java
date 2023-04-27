@@ -22,6 +22,5 @@ public class RestConfig {
     private String url;
     private String username;
     private String password;
-    @Column(nullable = false)
-    private String clientId;
+
 }

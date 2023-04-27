@@ -27,6 +27,5 @@ public class DatabaseConfig {
     private String databaseType;
     private String schemaName;
     private boolean useTls;
-    @Column(nullable = false)
-    private String clientId;
+
 }

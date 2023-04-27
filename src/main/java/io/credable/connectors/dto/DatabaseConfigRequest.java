@@ -38,8 +38,6 @@ public class DatabaseConfigRequest {
     @NotBlank
     private String schemaName;
     private boolean useTls=false;
-    @io.credable.connectors.util.UUID
-    @NotNull
-    private String clientId;
+
 
 }
