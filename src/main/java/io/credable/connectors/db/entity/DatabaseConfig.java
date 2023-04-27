@@ -1,9 +1,6 @@
 package io.credable.connectors.db.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -30,4 +27,6 @@ public class DatabaseConfig {
     private String databaseType;
     private String schemaName;
     private boolean useTls;
+    @Column(nullable = false)
+    private String clientId;
 }

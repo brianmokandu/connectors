@@ -31,5 +31,8 @@ public class SftpConfigRequest {
     private String passphrase;// will also be used as password for username:password
     private int port=22;
     private  boolean active=true;
+    @io.credable.connectors.util.UUID
+    @NotNull
+    private String clientId;
 
 }

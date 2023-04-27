@@ -1,9 +1,6 @@
 package io.credable.connectors.db.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -25,4 +22,6 @@ public class RestConfig {
     private String url;
     private String username;
     private String password;
+    @Column(nullable = false)
+    private String clientId;
 }
